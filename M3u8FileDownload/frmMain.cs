@@ -46,6 +46,24 @@ namespace M3u8FileDownload
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            string[] cfgDir = "ts,m3u8,log".Split(',');
+            foreach(var d in cfgDir)
+            {
+                string path = Application.StartupPath + "\\"+d;
+                if (System.IO.Directory.Exists(path) == false)
+                {
+                    try
+                    {
+                        System.IO.Directory.CreateDirectory(path);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("创建目录:" + path + "，失败，请手工创建");
+                    }
+                }
+
+            }
+            
 
             this.DownloadPath = Application.StartupPath + "\\ts\\";
             Control.CheckForIllegalCrossThreadCalls = false;
