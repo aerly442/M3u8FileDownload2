@@ -1,0 +1,17 @@
+*.exe
+*.dll
+*.lib
+*.log
+*.log.*
+*.suo
+*.user
+*.vssettings
+packages/
+*.nupkg
+*.nuspec
+*.tmp
+*.bak
+obj/
+bin/
+.vs/
+M3u8FileDownload/obj/
